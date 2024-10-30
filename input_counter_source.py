@@ -9,11 +9,12 @@ values_41_50 = []
 while True:
     while True:
         try:
-            adder = int(input('Input a number that greater than or equals to 1 and less than or equals to 50'))
+            adder = int(input('\nInput a number that greater than or equals to 1 and less than or equals to 50\n'))
             
-            if adder < 1 and adder > 50:
-                print('Input is not within acceptable range')
-                adder = 0
+            while True:
+                if adder < 1 or adder > 50:
+                    print('Input is not within acceptable range')
+                    adder = 0
                 break
         except:
             print('Input has caused an error')
@@ -21,14 +22,6 @@ while True:
         break
     
     number_limit = number_limit + adder
-    if number_limit > 50:
-        print('Range\t\t Amount')
-        print('01 - 10 =\t', len(values_1_10))
-        print('11 - 20 =\t', len(values_11_20))
-        print('21 - 30 =\t', len(values_21_30))
-        print('31 - 40 =\t', len(values_31_40))
-        print('41 - 50 =\t', len(values_41_50))
-        break
     
     if adder >= 1 and adder <= 10:
         values_1_10.append(number_limit)
@@ -40,3 +33,13 @@ while True:
         values_31_40.append(number_limit)
     if adder >= 41 and adder <= 50:
         values_41_50.append(number_limit)
+    
+    if number_limit > 50:
+        print('\nInputted numbers range')
+        print('\nRange\t\t Amount')
+        print('01 - 10 =\t', len(values_1_10))
+        print('11 - 20 =\t', len(values_11_20))
+        print('21 - 30 =\t', len(values_21_30))
+        print('31 - 40 =\t', len(values_31_40))
+        print('41 - 50 =\t', len(values_41_50))
+        break
